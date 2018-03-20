@@ -9,6 +9,23 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var quoteLabel: UILabel!
+    
+    @IBAction func newQuote(_ sender: Any) {
+        
+        var quotes: [String] = []
+        quotes.append("Most people have the will to win, few have the will to prepare to win")
+        quotes.append("The secret of happiness is something to do")
+        quotes.append("Respect is what we owe; love, what we give")
+        quotes.append("There is nothing permanent except change.")
+        quotes.append("Think in the morning. Act in the noon. Eat in the evening. Sleep in the night.")
+        
+        let randomNumbers = arc4random_uniform(5)
+        quoteLabel.text = quotes[Int(randomNumbers)]
+        
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
